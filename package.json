@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "Eventora - Client and Server application",
   "main": "server/index.js",
+  
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
     "client": "npm run dev --prefix client",
     "server": "npm run dev --prefix server",
-    "build": "npm run build --prefix client && npm run build --prefix server",
-    "start": "node server/index.js",
-    "build:client": "npm run build --prefix client",
-    "build:server": "npm run build --prefix server"
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "node server/index.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
   }
 }
+
